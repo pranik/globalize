@@ -25,8 +25,13 @@ matrix:
     - env: RAILS_4_2=true DB=mysql
     - env: RAILS_5_0=true DB=sqlite3
       gemfile: gemfiles/Gemfile.rails5
+      rvm: 2.2
     - env: RAILS_5_0=true DB=postgres
+      gemfile: gemfiles/Gemfile.rails5
+      rvm: 2.2
     - env: RAILS_5_0=true DB=mysql
+      gemfile: gemfiles/Gemfile.rails5
+      rvm: 2.2
 notifications:
   webhooks:
     - https://webhooks.gitter.im/e/40dc875af26f64f39090
