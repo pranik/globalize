@@ -5,12 +5,12 @@ script: "bundle exec rake"
 install:
   - bundle install --retry=3
 gemfile:
- - Gemfie
+ - Gemfile
  - gemfiles/Gemfile.rails5
 env:
   - DB=sqlite3
-#  - DB=postgres
-#  - DB=mysql
+  - DB=postgres
+  - DB=mysql
 rvm:
   - 2.2.2
   - 2.2
@@ -22,8 +22,8 @@ matrix:
   allow_failures:
     - rvm: rbx-2
     - env: RAILS_4_2=true DB=sqlite3
-#    - env: RAILS_4_2=true DB=postgres
-#    - env: RAILS_4_2=true DB=mysql
+    - env: RAILS_4_2=true DB=postgres
+    - env: RAILS_4_2=true DB=mysql
   exclude:
     - rvm: 2.2
       gemfile: gemfiles/Gemfile.rails5
