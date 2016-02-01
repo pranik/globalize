@@ -9,13 +9,17 @@ gemfile:
  - gemfiles/Gemfile.rails5
 env:
   - DB=sqlite3
-  - DB=postgres
-  - DB=mysql
+#  - DB=postgres
+#  - DB=mysql
+  - RAILS_5_0=true DB=sqlite3 2.2.2 gemfile=gemfiles/Gemfile.rails5
+#  - RAILS_5_0=true DB=postgres 2.2.2 gemfile=gemfiles/Gemfile.rails5
+#  - RAILS_5_0=true DB=mysql 2.2.2 gemfile=gemfiles/Gemfile.rails5
 rvm:
-  - 2.2
-  - 2.1
+  - 2.2.2
+#  - 2.2
+#  - 2.1
   - 2.0.0
-  - rbx-2
+#  - rbx-2
   # - jruby-19mode
 matrix:
   allow_failures:
@@ -23,15 +27,7 @@ matrix:
     - env: RAILS_4_2=true DB=sqlite3
     - env: RAILS_4_2=true DB=postgres
     - env: RAILS_4_2=true DB=mysql
-    - env: RAILS_5_0=true DB=sqlite3
-      gemfile: gemfiles/Gemfile.rails5
-      rvm: 2.2
-    - env: RAILS_5_0=true DB=postgres
-      gemfile: gemfiles/Gemfile.rails5
-      rvm: 2.2
-    - env: RAILS_5_0=true DB=mysql
-      gemfile: gemfiles/Gemfile.rails5
-      rvm: 2.2
+
 notifications:
   webhooks:
     - https://webhooks.gitter.im/e/40dc875af26f64f39090
