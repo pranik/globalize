@@ -4,6 +4,9 @@ script: "bundle exec rake"
 # Per https://github.com/travis-ci/travis-ci/issues/2821
 install:
   - bundle install --retry=3
+gemfile:
+ - Gemfie
+ - gemfiles/Gemfile.rails5
 env:
   - DB=sqlite3
   - DB=postgres
@@ -20,6 +23,10 @@ matrix:
     - env: RAILS_4_2=true DB=sqlite3
     - env: RAILS_4_2=true DB=postgres
     - env: RAILS_4_2=true DB=mysql
+    - env: RAILS_5_0=true DB=sqlite3
+      gemfile: gemfiles/Gemfile.rails5
+    - env: RAILS_5_0=true DB=postgres
+    - env: RAILS_5_0=true DB=mysql
 notifications:
   webhooks:
     - https://webhooks.gitter.im/e/40dc875af26f64f39090
